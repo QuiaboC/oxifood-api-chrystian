@@ -1,4 +1,4 @@
-package br.com.ifpe.modelo.cliente;
+package br.com.ifpe.oxefood.modelo.cliente;
 
 import java.time.LocalDate;
 
@@ -8,7 +8,7 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.Where;
 
-import br.com.ifpe.util.entity.EntidadeAuditavel;
+import br.com.ifpe.oxefood.util.entity.EntidadeAuditavel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;

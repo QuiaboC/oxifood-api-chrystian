@@ -1,13 +1,12 @@
-package br.com.ifpe.modelo.produto;
+package br.com.ifpe.oxefood.modelo.produto;
 
-import java.time.LocalDate;
-
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.Where;
 
-import br.com.ifpe.util.entity.EntidadeAuditavel;
+import br.com.ifpe.oxefood.util.entity.EntidadeAuditavel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -24,16 +23,22 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Produto extends EntidadeAuditavel{
     
+    @Column
     private String nome;
 
+    @Column
     private String titulo;
  
+    @Column
     private String descricao;
  
+    @Column
     private Double valorUnitario;
  
-    private Integer tempoEntregaMinimo;
+    @Column
+    private Integer tempoEntregaMinima;
 
+    @Column
     private Integer tempoEntregaMaximo;
  
 }
