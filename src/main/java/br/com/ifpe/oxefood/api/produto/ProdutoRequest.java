@@ -14,9 +14,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class ProdutoRequest {
 
-    private String nome;
-
     private String titulo;
+
+    private String codigo;
  
     private String descricao;
 
@@ -29,8 +29,8 @@ public class ProdutoRequest {
     public Produto build() {
 
         return Produto.builder()
-                .nome(nome)
                 .titulo(titulo)
+                .codigo(codigo)
                 .descricao(descricao)
                 .valorUnitario(valorUnitario)
                 .tempoEntregaMinima(tempoEntregaMinima)
