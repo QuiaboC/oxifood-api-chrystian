@@ -40,7 +40,7 @@ public class Entregador extends EntidadeAuditavel{
     private String foneFixo;
 
     @Column
-    private Integer qtaEntregasRealisadas;
+    private Integer qtaEntregasRealizadas;
 
     @Column
     private Double valorFrete;

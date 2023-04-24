@@ -31,7 +31,7 @@ public class EntregadorRequest {
     private String foneFixo;
 
  
-    private Integer qtaEntregasRealisadas;
+    private Integer qtaEntregasRealizadas;
 
 
     private Double valorFrete;
@@ -60,9 +60,6 @@ public class EntregadorRequest {
   
     private Boolean ativo;
 
-    /**
-     * @return
-     */
     public Entregador build() {
 
         return Entregador.builder()
@@ -70,7 +67,7 @@ public class EntregadorRequest {
                 .cpf(cpf)
                 .rg(rg)
                 .foneFixo(foneFixo)
-                .qtaEntregasRealisadas(qtaEntregasRealisadas)
+                .qtaEntregasRealizadas(qtaEntregasRealizadas)
                 .valorFrete(valorFrete)
                 .enderecoRua(enderecoRua)
                 .enderecoNumero(enderecoNumero)
