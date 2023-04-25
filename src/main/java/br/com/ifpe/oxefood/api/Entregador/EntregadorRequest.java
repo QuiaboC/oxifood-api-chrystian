@@ -66,6 +66,7 @@ public class EntregadorRequest {
                 .nome(nome)
                 .cpf(cpf)
                 .rg(rg)
+                .dataNascimento(dataNascimento)
                 .foneFixo(foneFixo)
                 .qtaEntregasRealizadas(qtaEntregasRealizadas)
                 .valorFrete(valorFrete)
