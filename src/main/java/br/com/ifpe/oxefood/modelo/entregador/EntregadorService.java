@@ -1,5 +1,7 @@
 package br.com.ifpe.oxefood.modelo.entregador;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,4 +27,14 @@ public Entregador save(EntregadorBuilder build) {
     return null;
 }
 
+//importei o java.util.List;
+public List<Entregador> listarTodos() {
+  
+    return repository.findAll();
+}
+
+public Entregador obterPorID(Long id) {
+
+    return repository.findById(id).get();
+}
 }
