@@ -20,6 +20,20 @@ public class ClienteService extends GenericService {
        super.preencherCamposAuditoria(cliente);
        return repository.save(cliente);
    }
+   @Transactional
+   public void update(Long id, Cliente clienteAlterado) {
+
+      Cliente cliente = repository.findById(id).get();
+      cliente.setNome(clienteAlterado.getNome());
+      cliente.setDataNascimento(clienteAlterado.getDataNascimento());
+      cliente.setCpf(clienteAlterado.getCpf());
+      cliente.setFoneCelular(clienteAlterado.getFoneCelular());
+      cliente.setFoneFixo(clienteAlterado.getFoneFixo());
+	    
+      super.preencherCamposAuditoria(cliente);
+      repository.save(cliente);
+  }
+
 //importei o java.util.List;
    public List<Cliente> listarTodos() {
   
@@ -30,5 +44,16 @@ public Cliente obterPorID(Long id) {
 
     return repository.findById(id).get();
 }
+
+@Transactional
+   public void delete(Long id) {
+
+       Cliente cliente = repository.findById(id).get();
+       cliente.setHabilitado(Boolean.FALSE);
+       super.preencherCamposAuditoria(cliente);
+
+       repository.save(cliente);
+   }
+
 
 }
