@@ -22,6 +22,21 @@ public class ProdutoService extends GenericService{
         super.preencherCamposAuditoria(produto);
         return repository.save(produto);
     }
+    @Transactional
+   public void update(Long id, Produto produtoAlterado) {
+
+      Produto produto = repository.findById(id).get();
+      produto.setTitulo(produtoAlterado.getTitulo());
+      produto.setCodigo(produtoAlterado.getCodigo());
+      produto.setDescricao(produtoAlterado.getDescricao());
+      produto.setValorUnitario(produtoAlterado.getValorUnitario());
+      produto.setTempoEntregaMinima(produtoAlterado.getTempoEntregaMinima());
+      produto.setTempoEntregaMaximo(produtoAlterado.getTempoEntregaMaximo());
+	    
+      super.preencherCamposAuditoria(produto);
+      repository.save(produto);
+  }
+
 
     public Produto save(ProdutoBuilder build) {
         return null;

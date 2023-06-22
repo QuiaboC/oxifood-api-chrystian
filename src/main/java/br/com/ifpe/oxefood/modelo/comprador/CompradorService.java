@@ -21,6 +21,22 @@ public class CompradorService extends GenericService{
        super.preencherCamposAuditoria(comprador);
        return repository.save(comprador);
    }
+   @Transactional
+   public void update(Long id, Comprador compradorAlterado) {
+
+    Comprador comprador = repository.findById(id).get();
+      comprador.setNome(compradorAlterado.getNome());
+      comprador.setEnderecoComercial(compradorAlterado.getEnderecoComercial());
+      comprador.setEnderecoResidencial(compradorAlterado.getEnderecoResidencial());
+      comprador.setComissao(compradorAlterado.getComissao());
+      comprador.setTrabahoHomeOffice(compradorAlterado.isTrabahoHomeOffice());
+      comprador.setQtdComprasMediasMes(compradorAlterado.getQtdComprasMediasMes());
+      comprador.setContratadoEm(compradorAlterado.getContratadoEm());
+	    
+      super.preencherCamposAuditoria(comprador);
+      repository.save(comprador);
+  }
+
    
 
    public Comprador save (CompradorBuilder build) {
